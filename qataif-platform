@@ -1,0 +1,849 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>قطايف | منصة أحياء الثانوية العامة — أستاذ يوسف محمود يوسف</title>
+<style>
+:root{--bg:#f5f7fb;--surface:#fff;--ink:#122033;--muted:#6b778c;--line:#e7ebf2;--brand:#13a36d;--brand2:#087a51;--dark:#102a24;--gold:#e7b94d;--shadow:0 12px 35px rgba(18,32,51,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Tahoma,Arial,sans-serif}
+.app{min-height:100vh}
+.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{max-width:1180px;margin:auto;padding:12px 18px;display:flex;align-items:center;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;font-size:24px;font-weight:900;white-space:nowrap}
+.mark{width:43px;height:43px;border-radius:14px;background:linear-gradient(135deg,var(--brand),#50d79e);display:grid;place-items:center;color:#fff;font-size:21px;box-shadow:0 8px 20px #13a36d35}
+.links{display:flex;gap:5px;margin-right:auto}
+.links button,.login{border:0;background:transparent;padding:10px 13px;color:#455266;cursor:pointer;border-radius:10px}
+.links button:hover{background:#f0f5f3;color:var(--brand2)}
+.login{background:var(--dark);color:#fff;padding:10px 18px}
+.hero{max-width:1180px;margin:34px auto 20px;padding:0 18px}
+.heroBox{background:linear-gradient(135deg,#102a24,#164a3b);border-radius:28px;padding:45px;display:grid;grid-template-columns:1.4fr .8fr;gap:30px;color:#fff;overflow:hidden;position:relative}
+.heroBox:after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:#36d18d22;left:-70px;bottom:-120px}
+.badge{display:inline-block;background:#ffffff17;border:1px solid #ffffff25;padding:8px 13px;border-radius:30px;color:#baf5d9;font-size:13px}
+.hero h1{font-size:clamp(32px,5vw,58px);line-height:1.1;margin:18px 0 12px}
+.hero p{font-size:18px;line-height:1.9;color:#d6e8e1;max-width:650px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.primary,.secondary{border:0;border-radius:13px;padding:13px 20px;cursor:pointer;font-weight:800}
+.primary{background:var(--brand);color:#fff}
+.secondary{background:#fff;color:var(--dark)}
+.heroCard{align-self:center;background:#ffffff12;border:1px solid #ffffff1d;border-radius:22px;padding:20px}
+.teacherName{font-size:22px;font-weight:900;color:#fff;text-align:center;margin:4px 0 8px}
+.teacherRole{text-align:center;color:#baf5d9;font-size:13px;margin:0 0 18px}
+.heroCard div{margin:8px 0;color:#dcece6}
+.heroInfo{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:12px}
+.heroInfo span{background:#ffffff12;border:1px solid #ffffff18;padding:7px 10px;border-radius:20px;font-size:12px;color:#e8f5f0}
+.section{max-width:1180px;margin:55px auto;padding:0 18px}
+.head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:20px}
+.head h2{margin:0;font-size:29px}
+.head p{margin:7px 0 0;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow)}
+.course{cursor:pointer;transition:.2s}
+.course:hover{transform:translateY(-3px)}
+.icon{width:48px;height:48px;border-radius:14px;background:#eaf8f2;color:var(--brand2);display:grid;place-items:center;font-size:24px;margin-bottom:15px}
+.course h3,.card h3{margin:0 0 8px}
+.muted{color:var(--muted);line-height:1.7}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}
+.pill{font-size:12px;background:#f3f5f8;border-radius:30px;padding:7px 10px;color:#5c6879}
+.courseBtn{margin-top:18px;width:100%;border:0;border-radius:12px;padding:11px;background:#edf8f3;color:var(--brand2);font-weight:800;cursor:pointer}
+.bundle{position:relative}
+.bundle.featured{border:2px solid var(--brand)}
+.tag{position:absolute;top:15px;left:15px;background:var(--brand);color:#fff;border-radius:20px;padding:6px 10px;font-size:12px}
+.price{font-size:31px;font-weight:900;margin:18px 0 4px}
+.price small{font-size:13px;color:var(--muted);font-weight:normal}
+.features{padding:0;list-style:none;line-height:2;margin:15px 0}
+.features li:before{content:'✓';color:var(--brand);font-weight:900;margin-left:7px}
+.lesson{display:grid;grid-template-columns:1.4fr .6fr;gap:18px}
+.video{background:#0c1715;min-height:300px;border-radius:20px;display:grid;place-items:center;color:#fff;font-size:52px}
+.lessonSide .row{padding:13px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.progress{height:9px;background:#edf0f4;border-radius:20px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--brand);border-radius:20px}
+.dash{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:17px;padding:18px}
+.stat b{font-size:27px;display:block;margin-bottom:5px}
+.quiz{display:none}
+.quiz.active{display:block}
+.q{font-weight:800;font-size:18px;margin-bottom:15px}
+.option{display:block;width:100%;text-align:right;border:1px solid var(--line);background:#fff;padding:13px;border-radius:12px;margin:8px 0;cursor:pointer}
+.option.selected{border-color:var(--brand);background:#eefaf5}
+.footer{background:#0d211c;color:#d6e8e1;margin-top:70px;padding:35px 18px}
+.footerIn{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.whatsapp{color:#9cf0c8;text-decoration:none;font-weight:800}
+.toast{position:fixed;bottom:22px;right:22px;background:#122c25;color:#fff;padding:13px 17px;border-radius:12px;display:none;z-index:50;box-shadow:var(--shadow)}
+.formGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.formGrid input,.formGrid select{padding:13px;border:1px solid var(--line);border-radius:12px;background:#fff;font-family:inherit}
+.formGrid .primary{grid-column:1/-1}
+@media(max-width:850px){
+.links{display:none}.heroBox{grid-template-columns:1fr;padding:30px 22px}
+.grid{grid-template-columns:1fr}.lesson{grid-template-columns:1fr}
+.dash{grid-template-columns:repeat(2,1fr)}.section{margin-top:38px}.hero{margin-top:18px}
+}
+@media(max-width:700px){
+.formGrid{grid-template-columns:1fr}.formGrid .primary{grid-column:auto}
+}
+</style>
+</head>
+
+<body>
+<div class="app">
+
+<header class="top">
+<nav class="nav">
+<div class="logo"><span class="mark">ق</span>قطايف</div>
+
+<div class="links">
+<button onclick="go('courses')">الكورسات</button>
+<button onclick="go('bundles')">الباقات</button>
+<button onclick="go('dashboard')">متابعة الطالب</button>
+<button onclick="go('quiz')">الاختبارات</button>
+<button onclick="go('students')">إدارة الطلاب</button>
+</div>
+
+<span id="dbStatus" class="pill" style="background:#fff4d8;color:#8a6200">
+جاري الاتصال...
+</span>
+
+<button class="login" onclick="login()">دخول الطالب</button>
+</nav>
+</header>
+
+<main>
+
+<section class="hero">
+<div class="heroBox">
+
+<div>
+<span class="badge">منصة أحياء الثانوية العامة</span>
+
+<h1>
+افهم الأحياء…<br>
+وخلي المعلومة تثبت.
+</h1>
+
+<p>
+قطايف منصة تعليمية عصرية لشرح الأحياء مع أستاذ يوسف محمود يوسف،
+من الدرس والتدريب إلى الاختبار ومتابعة مستوى الطالب.
+</p>
+
+<div class="actions">
+<button class="primary" onclick="go('courses')">ابدأ التعلم الآن</button>
+<button class="secondary" onclick="go('bundles')">شوف الباقات</button>
+</div>
+</div>
+
+<div class="heroCard">
+
+<div class="teacherName">أستاذ يوسف محمود يوسف</div>
+
+<p class="teacherRole">مدرس الأحياء للثانوية العامة</p>
+
+<div><b>شرح مبسط</b> — خطوة بخطوة</div>
+<div><b>تدريب مستمر</b> — بعد كل درس</div>
+<div><b>اختبارات</b> — قياس حقيقي لمستواك</div>
+<div><b>متابعة</b> — تقدمك أمامك دائمًا</div>
+
+<div class="heroInfo">
+<span>🧬 أحياء</span>
+<span>🎓 ثانوية عامة</span>
+<span>⚡ تعلم سريع</span>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="section" id="courses">
+
+<div class="head">
+<div>
+<h2>الكورسات</h2>
+<p>اختار صفك وابدأ من مكانك.</p>
+</div>
+</div>
+
+<div class="grid">
+
+<div class="card course" onclick="openCourse('أحياء الصف الثالث الثانوي')">
+<div class="icon">🧬</div>
+<h3>أحياء الصف الثالث الثانوي</h3>
+<p class="muted">شرح المنهج، مراجعات، أسئلة وتدريبات واختبارات.</p>
+
+<div class="meta">
+<span class="pill">فيديوهات</span>
+<span class="pill">واجبات</span>
+<span class="pill">اختبارات</span>
+</div>
+
+<button class="courseBtn">دخول الكورس ←</button>
+</div>
+
+<div class="card course">
+<div class="icon">🔬</div>
+<h3>أحياء الصف الثاني الثانوي</h3>
+<p class="muted">تأسيس وفهم المفاهيم الأساسية مع تدريبات متنوعة.</p>
+
+<div class="meta">
+<span class="pill">شرح</span>
+<span class="pill">مراجعة</span>
+</div>
+
+<button class="courseBtn">دخول الكورس ←</button>
+</div>
+
+<div class="card course">
+<div class="icon">🌱</div>
+<h3>أحياء الصف الأول الثانوي</h3>
+<p class="muted">بداية قوية في الأحياء بطريقة سهلة ومنظمة.</p>
+
+<div class="meta">
+<span class="pill">شرح</span>
+<span class="pill">تدريب</span>
+</div>
+
+<button class="courseBtn">دخول الكورس ←</button>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="lesson">
+
+<div class="head">
+<div>
+<h2>داخل الكورس</h2>
+<p>نموذج لتجربة الطالب من الوحدة إلى الاختبار.</p>
+</div>
+</div>
+
+<div class="lesson">
+
+<div class="card">
+<h3>الوحدة الأولى — الدعامة والحركة</h3>
+<p class="muted">اختر درسًا من القائمة، شاهد الشرح ثم انتقل للتدريب.</p>
+
+<div class="video">▶</div>
+
+<div style="margin-top:15px">
+<b>الدرس 1: الدعامة في النبات</b>
+<p class="muted">فيديو شرح + ملخص سريع + أسئلة تطبيقية.</p>
+</div>
+</div>
+
+<div class="card lessonSide">
+<h3>قائمة الدروس</h3>
+<div class="row">▶ الدرس 1 — الدعامة في النبات</div>
+<div class="row">▶ الدرس 2 — الدعامة في الإنسان</div>
+<div class="row">▶ الدرس 3 — الحركة في النبات</div>
+<div class="row">📝 واجب الوحدة</div>
+<div class="row">⏱ اختبار الوحدة</div>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="dashboard">
+
+<div class="head">
+<div>
+<h2>لوحة متابعة الطالب</h2>
+<p>كل تقدمك في مكان واحد.</p>
+</div>
+</div>
+
+<div class="dash">
+
+<div class="stat">
+<b>68%</b>
+<span class="muted">إتمام الكورس</span>
+</div>
+
+<div class="stat">
+<b>24</b>
+<span class="muted">درس مكتمل</span>
+</div>
+
+<div class="stat">
+<b>186</b>
+<span class="muted">سؤال محلول</span>
+</div>
+
+<div class="stat">
+<b>91%</b>
+<span class="muted">متوسط الاختبارات</span>
+</div>
+
+</div>
+
+<div class="card" style="margin-top:15px">
+<h3>تقدمك في الكورس</h3>
+
+<div class="progress">
+<i style="width:68%"></i>
+</div>
+
+<p class="muted">
+أنت قريب من إنهاء الوحدة الحالية. أكمل الدرس التالي ثم اختبر نفسك.
+</p>
+</div>
+
+</section>
+
+<section class="section" id="bundles">
+
+<div class="head">
+<div>
+<h2>باقات قطايف</h2>
+<p>اختار الباقة المناسبة لرحلتك في الأحياء.</p>
+</div>
+</div>
+
+<div class="grid">
+
+<div class="card bundle">
+<h3>باقة البداية</h3>
+<p class="muted">للطلاب الذين يريدون تأسيسًا وشرحًا منظمًا.</p>
+
+<div class="price">— <small>جنيه</small></div>
+
+<ul class="features">
+<li>شرح الدروس</li>
+<li>ملخصات</li>
+<li>أسئلة بعد الدرس</li>
+</ul>
+
+<button class="primary" onclick="subscribe('باقة البداية')">
+اشترك الآن
+</button>
+</div>
+
+<div class="card bundle featured">
+
+<span class="tag">الأكثر طلبًا</span>
+
+<h3>باقة التفوق</h3>
+
+<p class="muted">
+شرح + تدريب + اختبارات ومتابعة مستمرة.
+</p>
+
+<div class="price">— <small>جنيه</small></div>
+
+<ul class="features">
+<li>كل محتوى الكورس</li>
+<li>بنك أسئلة</li>
+<li>اختبارات إلكترونية</li>
+<li>متابعة التقدم</li>
+</ul>
+
+<button class="primary" onclick="subscribe('باقة التفوق')">
+اشترك الآن
+</button>
+</div>
+
+<div class="card bundle">
+
+<h3>باقة المراجعة النهائية</h3>
+
+<p class="muted">
+مراجعة مركزة قبل الامتحان مع اختبارات محاكاة.
+</p>
+
+<div class="price">— <small>جنيه</small></div>
+
+<ul class="features">
+<li>مراجعات نهائية</li>
+<li>اختبارات شاملة</li>
+<li>تدريب على الأسئلة</li>
+</ul>
+
+<button class="primary" onclick="subscribe('باقة المراجعة النهائية')">
+اشترك الآن
+</button>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="quiz">
+
+<div class="head">
+<div>
+<h2>اختبار تجريبي</h2>
+<p>اختبر فهمك بسرعة.</p>
+</div>
+</div>
+
+<div class="card">
+
+<div class="quiz active" id="q1">
+<div class="q">
+1) أي جزء من الخلية مسؤول بصورة أساسية عن إنتاج الطاقة؟
+</div>
+
+<button class="option" onclick="pick(this)">النواة</button>
+<button class="option" onclick="pick(this)">الميتوكوندريا</button>
+<button class="option" onclick="pick(this)">الريبوسومات</button>
+</div>
+
+<div class="quiz" id="q2">
+
+<div class="q">
+2) ما الهدف الأساسي من الاختبار بعد الدرس؟
+</div>
+
+<button class="option" onclick="pick(this)">
+قياس الفهم وتحديد نقاط الضعف
+</button>
+
+<button class="option" onclick="pick(this)">
+مشاهدة فيديو آخر
+</button>
+
+<button class="option" onclick="pick(this)">
+تغيير الباقة
+</button>
+
+</div>
+
+<button class="primary" style="margin-top:12px" onclick="nextQ()">
+السؤال التالي
+</button>
+
+</div>
+</section>
+
+</main>
+
+<section class="section" id="students">
+
+<div class="head">
+<div>
+<h2>إدارة الطلاب</h2>
+<p>إضافة طالب جديد ومتابعة بيانات الطلاب.</p>
+</div>
+</div>
+
+<div class="card" style="margin-bottom:15px">
+
+<h3>إضافة طالب جديد</h3>
+
+<div class="formGrid">
+
+<input id="studentName" placeholder="اسم الطالب">
+
+<input id="studentEmail" type="email" placeholder="البريد الإلكتروني">
+
+<input id="studentPhone" placeholder="رقم الهاتف">
+
+<select id="studentGrade">
+<option value="1">الصف الأول الثانوي</option>
+<option value="2">الصف الثاني الثانوي</option>
+<option value="3" selected>الصف الثالث الثانوي</option>
+</select>
+
+<input id="studentPassword" type="password" placeholder="كلمة مرور مؤقتة">
+
+<button class="primary" onclick="addStudent()">
++ إضافة الطالب
+</button>
+
+</div>
+</div>
+
+<div class="card">
+
+<h3>الطلاب المضافون</h3>
+
+<div id="studentsList" class="muted">
+لا توجد بيانات طلاب معروضة بعد.
+</div>
+
+</div>
+</section>
+
+<footer class="footer">
+
+<div class="footerIn">
+
+<div>
+<b style="font-size:23px">قطايف</b>
+
+<div style="margin-top:8px">
+منصة أحياء الثانوية العامة — أستاذ يوسف محمود يوسف
+</div>
+</div>
+
+<div>
+📞 01229612343<br>
+💬 واتساب:
+<a class="whatsapp"
+href="https://wa.me/201229612343"
+target="_blank">
+@gomma111
+</a>
+</div>
+
+</div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+</div>
+
+<script>
+
+const SUPABASE_URL='https://pzckkkdqbjodavxqyxhh.supabase.co';
+
+const SUPABASE_KEY='sb_publishable_uzbKO6wxvPkJX-b7edCSJQ_T71vD-xb';
+
+let currentUser=null;
+
+async function sb(path, options={}){
+
+const res=await fetch(
+SUPABASE_URL+'/rest/v1/'+path,
+{
+...options,
+headers:{
+apikey:SUPABASE_KEY,
+Authorization:'Bearer '+SUPABASE_KEY,
+'Content-Type':'application/json',
+Prefer:'return=representation',
+...(options.headers||{})
+}
+});
+
+if(!res.ok) throw new Error(await res.text());
+
+const txt=await res.text();
+
+return txt?JSON.parse(txt):null;
+}
+
+async function auth(path,body){
+
+const res=await fetch(
+SUPABASE_URL+'/auth/v1/'+path,
+{
+method:'POST',
+headers:{
+apikey:SUPABASE_KEY,
+'Content-Type':'application/json'
+},
+body:JSON.stringify(body)
+});
+
+const data=await res.json();
+
+if(!res.ok)
+throw new Error(
+data.msg||
+data.error_description||
+data.message||
+'حدث خطأ'
+);
+
+return data;
+}
+
+function setDbStatus(ok,text){
+
+const x=document.getElementById('dbStatus');
+
+x.textContent=text;
+
+x.style.background=ok?'#e8f8f0':'#fff4d8';
+
+x.style.color=ok?'#087a51':'#8a6200';
+
+}
+
+async function initDatabase(){
+
+try{
+
+await sb('courses?select=id&limit=1');
+
+setDbStatus(true,'● قاعدة البيانات متصلة');
+
+await loadCourses();
+
+}catch(e){
+
+setDbStatus(false,'● بانتظار إنشاء الجداول');
+
+}
+
+}
+
+async function loadCourses(){
+
+try{
+
+const rows=await sb('courses?select=*&order=grade.asc');
+
+if(!rows?.length)return;
+
+const cards=[
+...document.querySelectorAll('#courses .course')
+];
+
+rows.slice(0,3).forEach((c,i)=>{
+
+if(cards[i]){
+
+cards[i].dataset.courseId=c.id;
+
+cards[i].querySelector('h3').textContent=c.title;
+
+cards[i].querySelector('.muted').textContent=
+c.description||'شرح وتدريب واختبارات.';
+
+}
+
+});
+
+}catch(e){}
+
+}
+
+function go(id){
+
+document.getElementById(id)?.scrollIntoView({
+behavior:'smooth'
+});
+
+}
+
+function toast(t){
+
+let x=document.getElementById('toast');
+
+x.textContent=t;
+
+x.style.display='block';
+
+setTimeout(
+()=>x.style.display='none',
+2400
+);
+
+}
+
+async function login(){
+
+const email=prompt(
+'اكتب البريد الإلكتروني للطالب:'
+);
+
+if(!email)return;
+
+const password=prompt(
+'اكتب كلمة المرور:'
+);
+
+if(!password)return;
+
+try{
+
+const data=await auth(
+'token?grant_type=password',
+{
+email,
+password
+}
+);
+
+currentUser=data.user;
+
+localStorage.setItem(
+'qataif_access_token',
+data.access_token
+);
+
+toast(
+'تم تسجيل الدخول بنجاح يا '+
+(data.user?.email||'طالب قطايف')
+);
+
+await loadProgress();
+
+}catch(e){
+
+toast(
+'تعذر الدخول: '+e.message
+);
+
+}
+
+}
+
+async function loadProgress(){
+
+if(!currentUser)return;
+
+try{
+
+const rows=await sb(
+'student_progress?student_id=eq.'+
+encodeURIComponent(currentUser.id)+
+'&select=*'
+);
+
+if(rows?.length){
+
+const pct=Number(
+rows[0].completion||0
+);
+
+document.querySelector(
+'.dash .stat b'
+).textContent=pct+'%';
+
+document.querySelector(
+'.progress i'
+).style.width=pct+'%';
+
+}
+
+}catch(e){}
+
+}
+
+function openCourse(n){
+
+toast('تم فتح نموذج كورس '+n);
+
+go('lesson');
+
+}
+
+function subscribe(n){
+
+window.open(
+'https://wa.me/201229612343?text='+
+encodeURIComponent(
+'السلام عليكم، أريد الاشتراك في '+
+n+
+' على منصة قطايف.'
+),
+'_blank'
+);
+
+}
+
+function pick(el){
+
+el.parentElement
+.querySelectorAll('.option')
+.forEach(x=>x.classList.remove('selected'));
+
+el.classList.add('selected');
+
+}
+
+let q=1;
+
+function nextQ(){
+
+if(q===1){
+
+document.getElementById('q1')
+.classList.remove('active');
+
+document.getElementById('q2')
+.classList.add('active');
+
+q=2;
+
+}else{
+
+toast(
+'انتهى الاختبار التجريبي — النتيجة ستظهر هنا عند ربط نظام التصحيح.'
+);
+
+}
+
+}
+
+async function addStudent(){
+
+const name=
+document.getElementById('studentName')
+.value.trim();
+
+const email=
+document.getElementById('studentEmail')
+.value.trim();
+
+const phone=
+document.getElementById('studentPhone')
+.value.trim();
+
+const grade=
+Number(
+document.getElementById('studentGrade')
+.value
+);
+
+const password=
+document.getElementById('studentPassword')
+.value;
+
+if(!name||!email||!password){
+
+toast(
+'اكتب اسم الطالب والبريد وكلمة المرور'
+);
+
+return;
+
+}
+
+try{
+
+const data=await auth(
+'signup',
+{
+email,
+password,
+data:{
+full_name:name,
+phone,
+grade
+}
+}
+);
+
+toast(
+data.user?
+'تم إنشاء حساب الطالب بنجاح':
+'تم إرسال تأكيد البريد للطالب'
+);
+
+[
+'studentName',
+'studentEmail',
+'studentPhone',
+'studentPassword'
+]
+.forEach(
+id=>document.getElementById(id).value=''
+);
+
+}catch(e){
+
+toast(
+'تعذر إضافة الطالب: '+e.message
+);
+
+}
+
+}
+
+initDatabase();
+
+</script>
+
+</body>
+</html>
